@@ -27,7 +27,16 @@ end
 			within("#open-rides")do
 				expect(page).to have_content("#{@ride_1.name}")
 			end
-			
+		end
+
+		it'lists the rides in descending order'do
+			visit "mechanics/#{@mech_3.id}"
+			expect(page).to have_content("Mechanic: #{@mech_3.name}")
+			expect(page).to have_content("Years of Experience: #{@mech_3.experience}")
+
+			within("#open-rides")do
+				expect(@ride_4.name).to appear_before(@ride_3.name)
+			end
 		end
 
 	end
