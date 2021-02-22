@@ -10,3 +10,26 @@
 
 	<% end %>
 </section>
+
+
+<%= form_with url:  "/mechanics/#{@mechanic.id}", method: :patch , local: true do |form|  %>
+<%= form.label :ride_id, "Ride ID:" %>
+<%= form.text_field :ride_id %>
+<%= form.submit "Submit" %>
+<% end %>
+
+
+
+
+<% if false %>
+<!-- only way I could find to comment out code blocks -->
+<!-- Almost had the form model figured out, just got stuck on the routes part -->
+
+<%= form_with model: @mechanic, url: mechanics_path(@mechanic), method: :patch do |form| %>
+	<%= form.label :ride_id  %>
+	<%= form.text_field :ride_id %>
+	<%= form.submit "Submit" %>
+<% end %>
+
+
+<% end %>
