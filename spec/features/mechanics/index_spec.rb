@@ -20,6 +20,7 @@ end
 		it'lists all mechanics and their years'do
 			visit'/mechanics'
 			expect(page).to have_content("All Mechanics")
+			expect(page).to have_content("Average experience: 13.5")
 			within("#mechanic-#{@mech_1.id}")do
 				expect(page).to have_content('A')
 				expect(page).to have_content('12')
